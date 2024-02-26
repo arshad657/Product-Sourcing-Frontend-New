@@ -4,6 +4,7 @@ import ImageUploader from './ImageUploader'
 // import Category from './Category'
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
+import Category from './Category';
 
 function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
   const [numberOfPriceObjects, setNumberOfPriceObjects] = useState(1);
@@ -59,7 +60,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <TextField
                 id="outlined-basic" 
                 variant="outlined"
-                value={data.title} 
+                value={data?.title} 
                 fullWidth 
                 inputProps={{ style: { height: "10px" } }} 
                 onChange={(e) => handleChange(e.target.value, 'title')} 
@@ -71,7 +72,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               id="outlined-basic" 
               variant="outlined" 
               fullWidth
-              value={data.subTitle} 
+              value={data?.subTitle} 
               inputProps={{ style: { height: "10px" } }}
               onChange={(e) => handleChange(e.target.value, 'subTitle')} 
               />
@@ -91,7 +92,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
 
               {/* {renderTextFieldBlocks()} */}
               {Array.from({ length: numberOfPriceObjects }, (_, index) => (
-                <Box sx={{display: 'flex', justifyContent: 'space-between', mb: 2}}>
+                <Box key={index} sx={{display: 'flex', justifyContent: 'space-between', mb: 2}}>
                 <TextField id="outlined-basic" label="From" variant="outlined" onChange={(e) => handleChange(e.target.value, 'from', index)} value={data?.prices[index]?.from}/>
                 <TextField id="outlined-basic" label="To" variant="outlined" onChange={(e) => handleChange(e.target.value, 'to', index)}/>
                 <TextField id="outlined-basic" label="Amount" variant="outlined" type='number' onChange={(e) => handleChange(e.target.value, 'amount', index)}/>
@@ -110,7 +111,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               id="outlined-basic" 
               variant="outlined" 
               fullWidth
-              value={data.description} 
+              value={data?.description} 
               multiline
               onChange={(e) => handleChange(e.target.value, 'description')}
               />
@@ -121,7 +122,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               id="outlined-basic" 
               variant="outlined" 
               fullWidth
-              value={data.brand} 
+              value={data?.brand} 
               inputProps={{ style: { height: "10px" } }}
               onChange={(e) => handleChange(e.target.value, 'brand')} 
               />
@@ -132,7 +133,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               id="outlined-basic" 
               variant="outlined" 
               fullWidth
-              value={data.modelName} 
+              value={data?.modelName} 
               inputProps={{ style: { height: "10px" } }}
               onChange={(e) => handleChange(e.target.value, 'modelName')} 
               />
@@ -143,7 +144,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               id="outlined-basic" 
               variant="outlined" 
               fullWidth
-              value={data.color} 
+              value={data?.color} 
               inputProps={{ style: { height: "10px" } }}
               onChange={(e) => handleChange(e.target.value, 'color')} 
               />
@@ -152,7 +153,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <Typography fontSize='16px' mb={0.5}>Category
                 <span className='text-red-500'>*</span>
               </Typography>
-              {/* <Category /> */}
+              <Category data={data} setData={setData}/>
             </Box>
           </Box>
         </Grid>

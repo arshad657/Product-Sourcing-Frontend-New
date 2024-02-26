@@ -1,11 +1,13 @@
 import React from "react";
 
 import { Button, Img, Text } from "components";
+import { useNavigate } from "react-router-dom";
 
 const HomepageCardproduct = (props) => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className={props.className}>
+      <div className={props.className} onClick= {() => navigate(`/product/${props.id}`)}>
         <div className="h-[400px] relative w-full">
           <Img
             className="absolute h-[400px] inset-[0] justify-center m-auto object-cover w-full"

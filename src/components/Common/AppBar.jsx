@@ -17,7 +17,7 @@ const AppBar = (props) => {
         <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between w-full">
           <div className="header-row">
           <Img
-              className="h-[auto] w-[150px]"
+              className="h-[auto] w-[130px]"
               src={logo}
               alt="car"
             />
@@ -26,13 +26,8 @@ const AppBar = (props) => {
               <div></div>
               <div></div>
             </div>
-            {/* <Img
-              className="h-[auto] w-[150px]"
-              src={logo}
-              alt="car"
-            /> */}
           </div>
-          <div className="flex sm:flex-1 flex-row gap-9 sm:hidden items-center justify-between w-[498px] sm:w-full">
+          <div className="flex sm:flex-1 flex-row gap-9 sm:hidden items-center justify-evenly w-[498px] sm:w-full">
           <Text
               className="text-black-900 text-lg tracking-[-0.50px] w-auto"
               size="txtRubikRomanRegular18"

@@ -72,9 +72,8 @@ const HomepagePage = () => {
     <>
       <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full">
         <div className="flex flex-col items-start justify-start w-full">
-          {/* <CartNavbar className="bg-white-A700 flex items-center justify-center md:px-5 px-[75px] py-[35px] w-full" /> */}
           <div className="bg-orange-10 flex flex-col items-start justify-start md:px-10 sm:px-5 px-[75px] py-20 w-full">
-            <div className="flex md:flex-col flex-row md:gap-10 gap-[60px] items-center justify-start max-w-[1290px] mx-auto w-full">
+            <div className="flex md:flex-col flex-row md:gap-10 gap-[60px] items-center justify-start max-w-[1490px] mx-auto w-full">
               <div className="flex flex-1 flex-col gap-[30px] items-start justify-start w-full">
                 <div className="flex flex-col gap-[26px] items-start justify-start w-full">
                   <Text
@@ -103,7 +102,7 @@ const HomepagePage = () => {
                   className="common-pointer bg-bluegray-900 border-2 border-bluegray-900 border-solid cursor-pointer font-medium leading-[normal] min-w-[218px] py-[18px] text-center text-xl text-yellow-100 tracking-[-0.50px]"
                   onClick={() => navigate("/shop")}
                 >
-                  Shop Now
+                  Visit Shop
                 </Button>
               </div>
               <Img
@@ -114,16 +113,16 @@ const HomepagePage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-black-900 flex flex-col items-center justify-center md:px-10 sm:px-5 px-[173px] py-[41px] w-full">
-          <div className="flex flex-col gap-[46px] items-center justify-start max-w-[1094px] mx-auto w-full">
+        <div className="bg-black-900 flex flex-col items-center justify-center md:px-10 sm:px-5  py-[61px] w-full">
+          <div className="flex flex-col gap-[46px] items-center justify-start max-w-[1094px] mx-auto w-full mb-[41px]">
             <Text
               className="text-center text-gray-53 text-xl tracking-[-0.50px] w-full"
               size="txtRubikRegular20"
             >
               Our Services
             </Text>
-            {/* <Service /> */}
-            <div className="flex md:flex-col flex-row md:gap-[50px] items-center justify-between w-full">
+            <Service />
+            {/* <div className="flex md:flex-col flex-row md:gap-[50px] items-center justify-between w-full">
               <Img
                 className="h-12 w-[220px]"
                 src="images/img_search.svg"
@@ -154,10 +153,10 @@ const HomepagePage = () => {
                 src="images/img_companylogocompany109_gray_53_48x132.svg"
                 alt="companylogocomp_Four"
               />
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center md:px-10 sm:px-5 px-[75px] w-full">
+        {/* <div className="flex flex-col items-center justify-center md:px-10 sm:px-5 px-[75px] w-full">
           <List
             className="sm:flex-col flex-row gap-5 grid md:grid-cols-1 grid-cols-2 justify-center max-w-[1290px] mx-auto w-full"
             orientation="horizontal"
@@ -225,7 +224,7 @@ const HomepagePage = () => {
               </div>
             </div>
           </List>
-        </div>
+        </div> */}
         {/* <div className="flex flex-col items-center justify-start md:px-10 sm:px-5 px-[75px] w-full">
           <div className="flex flex-col gap-[46px] items-center justify-start max-w-[1290px] mx-auto w-full">
             <div className="flex flex-col gap-[13px] items-center justify-start w-full">
@@ -346,7 +345,7 @@ const HomepagePage = () => {
             />
           </div>
         </div> */}
-        <div className="h-[535px] md:h-[892px] md:px-5 relative w-full">
+        {/* <div className="h-[535px] md:h-[892px] md:px-5 relative w-full">
           <div className="absolute bg-yellow-100 bottom-[0] h-[440px] inset-x-[0] mx-auto w-full"></div>
           <div className="absolute flex md:flex-col flex-row md:gap-10 h-full inset-y-[0] items-center justify-between max-w-[1365px] my-auto right-[0] w-full">
             <div className="flex sm:flex-1 flex-col gap-[30px] items-start justify-start w-[525px] sm:w-full">
@@ -377,7 +376,7 @@ const HomepagePage = () => {
               alt="insideweather"
             />
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col font-raleway items-center justify-start md:px-10 sm:px-5 px-[75px] w-full">
           <div className="flex flex-col md:gap-10 gap-[67px] items-center justify-start max-w-[1290px] mx-auto w-full">
           <div className="flex flex-col gap-[13px] items-center justify-start w-full">
@@ -403,7 +402,8 @@ const HomepagePage = () => {
                 {products.map((props, index) => (
                   <React.Fragment key={`HomepageCardproduct${index}`}>
                     <HomepageCardproduct
-                      className="flex flex-1 flex-col gap-4 items-start justify-start w-full"
+                      
+                      className="cursor-pointer flex flex-1 flex-col gap-4 items-start justify-start w-full"
                       // status="New"
                       {...props}
                     />

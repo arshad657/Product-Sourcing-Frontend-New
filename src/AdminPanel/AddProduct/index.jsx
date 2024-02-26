@@ -20,7 +20,7 @@ function AddProduct() {
     brand: "",
     modelName: "",
     color: "",
-    category: "",
+    category: undefined,
     prices: [],
     images: []
   });

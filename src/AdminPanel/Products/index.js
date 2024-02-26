@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import { Box, Button, Typography } from '@mui/material';
-
-// import HorizontalTableMenu from '../../Components/HorizontalTableMenu.js'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import HorizontalTableMenu from './HorizontalTableMenu';
 
 function ProductList() {
   const [products, setProducts] = useState([])
@@ -32,19 +31,19 @@ function ProductList() {
     ),
   },
     { field: 'title', headerName: 'Title', width: 200, headerAlign: 'center', align: 'center', flex: 1},
+    { field: 'category', headerName: 'Category', width: 200, headerAlign: 'center', align: 'center', flex: 1},
     { field: 'description', headerName: 'Description', width: 300, headerAlign: 'center',align: 'center' , flex: 1},
-    // { field: 'price', headerName: 'Price', type: 'number', width: 120, headerAlign: 'center', align: 'center', flex: 1},
-    // {
-    //   field: 'actions',
-    //   headerAlign: 'center',
-    //   headerName: 'Actions',
+    {
+      field: 'actions',
+      headerAlign: 'center',
+      headerName: 'Actions',
       
-    //   width: 150,
-    //   renderCell: (params) => (
-    //       <Button sx={{mx: 'auto'}}><HorizontalTableMenu fetchData={fetchData} params={params}/></Button>
-    //   ),
-    //   flex: 1
-    // },
+      width: 150,
+      renderCell: (params) => (
+          <Button sx={{mx: 'auto'}}><HorizontalTableMenu fetchData={fetchData} params={params}/></Button>
+      ),
+      flex: 1
+    },
   ];
 
   

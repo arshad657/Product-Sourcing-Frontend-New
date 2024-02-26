@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 // import ImageIcon from '../../../Images/image-gallery.png'
 import { Box, Card,IconButton, CardContent, TextField, Typography, Button } from '@mui/material'
-// import UploadIcon from '@mui/icons-material/Upload';
-// import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import UploadIcon from '@mui/icons-material/Upload';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import axios from 'axios';
 
 
@@ -57,7 +57,7 @@ const ImageUploader = ({uploadedFiles, setUploadedFiles, data, setData}) => {
         <input {...getInputProps()} />
         {/* <img src={ImageIcon} style={{width: 80}}/> */}
         <Box sx={{mt: 2,display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
-        {/* <UploadIcon /> */}
+        <UploadIcon />
         <Typography >Drop files here or Browse.</Typography>
         </Box>
       </Box>
@@ -84,7 +84,7 @@ const ImageUploader = ({uploadedFiles, setUploadedFiles, data, setData}) => {
               </Typography>
               </Box>
             </Box>
-            {/* <IconButton onClick={() => handleRemoveFile(file.name)}><DeleteOutlineOutlinedIcon /></IconButton> */}
+            <IconButton onClick={() => handleRemoveFile(file.name)}><DeleteOutlineOutlinedIcon /></IconButton>
           </Box>
 )})}
       </Box>

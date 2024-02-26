@@ -10,6 +10,7 @@ import logo  from '../../assets/images/logo_appbar.jpg'
 // import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import AdminAppBar from './AdminAppBar';
 
 const  AdminLayout = () => {
     const drawerWidth = 200;
@@ -71,7 +72,7 @@ const  AdminLayout = () => {
           </Box>
         </Drawer>
           <Box sx={{ p: 3, ml: '240px' }}>
-            {/* <AdminAppBar drawerWidth={drawerWidth}/> */}
+            <AdminAppBar drawerWidth={drawerWidth}/>
             <Box sx={{}}>
               <Box sx={{ml: 10, width: '90%'}}>
                 <Outlet />
@@ -80,16 +81,16 @@ const  AdminLayout = () => {
           </Box>
   
          <ToastContainer 
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
         />
       </Box>
     );

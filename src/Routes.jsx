@@ -6,6 +6,7 @@ import AddProduct from "AdminPanel/AddProduct";
 import ProductList from "AdminPanel/Products";
 import AdminLayout from "AdminPanel/Layout";
 import Layout from "components/Layout";
+import PasswordSettings from "AdminPanel/PasswordSettings";
 const Aboutus = React.lazy(() => import("pages/Aboutus"));
 const Contactus = React.lazy(() => import("pages/Contactus"));
 const BlogDetail = React.lazy(() => import("pages/BlogDetail"));
@@ -32,24 +33,24 @@ const ProjectRoutes = () => {
     <React.Suspense fallback={<>Loading...</>}>
         <Router>
           <Routes>
-          <Route path="/*" element={<Layout />}>
-          <Route index element={<Homepage />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="shopdetaildescription" element={<ShopDetailDescription />} />
-          <Route path="detailreview" element={<DetailReview />} />
-          <Route path="checkout" element={<Checkout />} />
-          
-          <Route path="wishlist" element={<Wishlist />} />
-          <Route path="team" element={<Team />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="blogdetail" element={<BlogDetail />} />
-          <Route path="contactus" element={<Contactus />} />
-          <Route path="aboutus" element={<Aboutus />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
+          <Route path="/" element={<Layout />}>
+      <Route index element={<Homepage />} />
+      <Route path="shop" element={<Shop />} />
+      <Route path="product/:id" element={<ShopDetailDescription />} />
+      <Route path="detailreview" element={<DetailReview />} />
+      <Route path="checkout" element={<Checkout />} />
+      <Route path="wishlist" element={<Wishlist />} />
+      <Route path="team" element={<Team />} />
+      <Route path="blog" element={<Blog />} />
+      <Route path="blogdetail" element={<BlogDetail />} />
+      <Route path="contactus" element={<Contactus />} />
+      <Route path="aboutus" element={<Aboutus />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
           <Route path="/admin/*" element={<AdminLayout />}>
             <Route path="products" element={<ProductList />} />
             <Route path="add-product" element={<AddProduct />} />
+            <Route path="password-settings" element={<PasswordSettings />} />
           </Route>
           <Route path="/dhiwise-dashboard" element={<Home />} />
         </Routes>

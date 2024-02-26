@@ -39,24 +39,11 @@ const Layout = () => {
     };
   
     return (
+      <Box>
+        <AppBar className="bg-white-A700 flex items-center justify-center md:px-5 px-[75px] py-[20px] w-full"/>
         <Box>
-            <AppBar className="bg-white-A700 flex items-center justify-center md:px-5 px-[75px] py-[35px] w-full"/>
-              <Box>
-                <Outlet />
-              </Box>
-  
-        {/* <ToastContainer 
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        /> */}
+          <Outlet />
+        </Box>
       </Box>
     );
   };
