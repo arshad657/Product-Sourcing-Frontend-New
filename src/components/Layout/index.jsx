@@ -1,6 +1,6 @@
 import { Box, Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { List } from 'components';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaBoxOpen } from "react-icons/fa6";
 import { BiSolidCategory } from "react-icons/bi";
@@ -8,6 +8,7 @@ import { BsPersonFill } from "react-icons/bs";
 import { MdPassword } from "react-icons/md";
 import logo  from '../../assets/images/logo_appbar.jpg'
 import AppBar from 'components/Common/AppBar';
+import Footer from 'components/Common/Footer';
 
 const Layout = () => {
     const drawerWidth = 200;
@@ -37,14 +38,33 @@ const Layout = () => {
       localStorage.clear();
       window.location.href = "/";
     };
+    useEffect(() => {
+      // Dynamically append the script to the document
+      const script = document.createElement('script');
+      script.src = "https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js";
+      script.defer = true;
+      script.id = "tcx-callus-js";
+      script.charSet = "utf-8";
+      
+      document.body.appendChild(script);
   
+      // Cleanup on component unmount (optional)
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
     return (
-      <Box>
+      <div>
+        <div>
+        <call-us-selector phonesystem-url="https://1011.3cx.cloud" party="arshad39stech"></call-us-selector>
+        <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+        </div>
         <AppBar className="bg-white-A700 flex items-center justify-center md:px-5 px-[75px] py-[20px] w-full"/>
         <Box>
           <Outlet />
         </Box>
-      </Box>
+        <Footer className="bg-black-900 flex font-raleway gap-2 items-center justify-center md:px-5 px-[75px] py-[50px] w-full"  />
+      </div>
     );
   };
 

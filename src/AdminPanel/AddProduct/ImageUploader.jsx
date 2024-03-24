@@ -52,15 +52,16 @@ const ImageUploader = ({uploadedFiles, setUploadedFiles, data, setData}) => {
   return (
     <Box sx={{px: {lg: 5, md: 2, sm: 2} }}>
       <Typography textAlign='left' sx={{fontWeight: 600, color: '#6b6e73', mb: 3}}>Add Images</Typography>
-
-      <Box {...getRootProps()} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 250, backgroundColor: '#f5f6fa', border: '3px dashed #6589D1 ', cursor: 'pointer', borderRadius: '10px'}}>
-        <input {...getInputProps()} />
-        {/* <img src={ImageIcon} style={{width: 80}}/> */}
+    {
+      !uploadedFiles?.length > 0 &&
+      <Box {...getRootProps()} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 250, backgroundColor: '#f5f6fa', border: '3px dashed #6589D1 ', cursor: 'pointer', borderRadius: '10px'}}>
+        <input {...getInputProps()}/>
         <Box sx={{mt: 2,display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
         <UploadIcon />
         <Typography >Drop files here or Browse.</Typography>
         </Box>
       </Box>
+    }
       <Box mt={2}>
         {uploadedFiles.map((file) => {
         return (

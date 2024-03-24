@@ -20,6 +20,8 @@ import HomepageCardblog from "components/HomepageCardblog";
 import HomepageCardproduct from "components/HomepageCardproduct";
 import Service from "./Service";
 import axios from "axios";
+import TeamCardteam from "components/TeamCardteam";
+import ServicesCard from "components/ServicesCard";
 
 const homeOptionsList = [
   { label: "Option1", value: "option1" },
@@ -30,11 +32,16 @@ const homeOptionsList = [
 const HomepagePage = () => {
   const navigate = useNavigate();
 
+  
+
   const [products, setProducts] = useState([])
 
   
   const sliderRef = React.useRef(null);
   const [sliderState, setsliderState] = React.useState(0);
+  // const sliderRef1 = React.useRef(null);
+  // const [sliderState1, setsliderState1] = React.useState(0);
+
   const homepageCardproductPropList = [
     { save: "images/img_save.svg" },
     { image: "images/img_image_7.png" },
@@ -68,6 +75,27 @@ const HomepagePage = () => {
     { rectangleeighteen: "images/img_rectangle18_1.png" },
   ];
 
+  const images = [
+    {
+      title: 'Import',
+      description: 'Suppose, I have a import export and door to door service related website. Now, give me a tag line that can be used at the first section of the website. My company name is ROHMAN TRADINGS. give me at least 5 options to choose',
+      
+      imgPath:
+        'https://assets-global.website-files.com/617a2ab2ffe6cf153dbc87b0/654db567a01afbcbb29115d1_Starting%20an%20Import-Export%20Business%20in%20Singapore.jpg',
+    },
+    {
+      title: 'Export',
+      description: 'Suppose, I have a import export and door to door service related website. Now, give me a tag line that can be used at the first section of the website. My company name is ROHMAN TRADINGS. give me at least 5 options to choose',
+      imgPath:
+        'https://afs.net/wp-content/uploads/International-Shipping.jpeg',
+    },
+    {
+      title: 'Door to Door Service',
+      description: 'Suppose, I have a import export and door to door service related website. Now, give me a tag line that can be used at the first section of the website. My company name is ROHMAN TRADINGS. give me at least 5 options to choose',
+      imgPath:
+        'https://legendshipping.com/wp-content/uploads/2022/11/door-to-door.jpg',
+    },
+  ];
   return (
     <>
       <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full">
@@ -121,7 +149,59 @@ const HomepagePage = () => {
             >
               Our Services
             </Text>
-            <Service />
+            {/* <Service /> */}
+            <div className="flex flex-col items-start justify-start w-full mb-10">
+              <Slider
+                autoPlay
+                autoPlayInterval={2000}
+                activeIndex={sliderState}
+                responsive={{
+                  0: { items: 1 },
+                  550: { items: 1 },
+                  1050: { items: 1 },
+                }}
+                onSlideChanged={(e) => {
+                  setsliderState(e?.item);
+                }}
+                ref={sliderRef}
+                className="gap-5 w-full"
+                items={images.map((service) => (
+                  <React.Fragment key={Math.random()}>
+                    <ServicesCard
+                      service={service}
+                      className="flex flex-1 flex-col gap-2 items-start justify-start mx-2.5"
+                      linkedin="images/img_linkedin.svg"
+                      facebook="images/img_facebook.svg"
+                      twitter="images/img_twitter.svg"
+                    />
+                  </React.Fragment>
+                ))}
+                renderDotsItem={({ isActive }) => {
+                  if (isActive) {
+                    return (
+                      <div className="inline-block cursor-pointer rounded-[50%] h-[15px] bg-bluegray-900 w-[15px]" />
+                    );
+                  }
+                  return (
+                    <div
+                      className="inline-block cursor-pointer rounded-[50%] h-[15px] bg-gray-200 w-[15px]"
+                      role="button"
+                      tabIndex={0}
+                    />
+                  );
+                }}
+              />
+            </div>
+            <PagerIndicator
+              className="flex gap-[15px] h-[15px] items-start justify-start w-[75px]"
+              count={3}
+              activeCss="inline-block cursor-pointer rounded-[50%] h-[15px] bg-gray-200 w-[15px]"
+              activeIndex={sliderState}
+              inactiveCss="inline-block cursor-pointer rounded-[50%] h-[15px] bg-bluegray-800 w-[15px]"
+              sliderRef={sliderRef}
+              selectedWrapperCss="inline-block"
+              unselectedWrapperCss="inline-block"
+            />
             {/* <div className="flex md:flex-col flex-row md:gap-[50px] items-center justify-between w-full">
               <Img
                 className="h-12 w-[220px]"
@@ -554,8 +634,6 @@ const HomepagePage = () => {
             </List>
           </div>
         </div>
-        
-        <CartSectionfooter className="bg-black-900 flex font-raleway gap-2 items-center justify-center md:px-5 px-[75px] py-[50px] w-full" />
       </div>
     </>
   );

@@ -1,32 +1,31 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Img, SelectBox, Text } from "components";
 import { Link } from "react-router-dom";
 import logo from '../../assets/images/logo.jpg'
-
-const homeOptionsList = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
+import { IconButton } from "@mui/material";
+import DropdownButton from "components/Common/MobileMenuBar";
 
 const AppBar = (props) => {
+  const [showMobileDrawer, setShowMobileDrawer] = useState(false)
   return (
     <>
       <header className={props.className}>
-        <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between w-full">
+        <div className="flex md:flex-col sm:flex-row md:gap-10 items-center justify-between w-full">
           <div className="header-row">
           <Img
               className="h-[auto] w-[130px]"
               src={logo}
               alt="car"
             />
-            <div className="mobile-menu">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            
+            {/* <div className="mobile-menu" onClick={() => setShowMobileDrawer(true)}> */}
+              {/*  */}
+            {/* </div> */}
+
           </div>
+          
           <div className="flex sm:flex-1 flex-row gap-9 sm:hidden items-center justify-evenly w-[498px] sm:w-full">
           <Text
               className="text-black-900 text-lg tracking-[-0.50px] w-auto"
@@ -69,6 +68,12 @@ const AppBar = (props) => {
               Licences
               </Link>
             </Text>
+          </div>
+          <div className="hidden sm:block">
+          <DropdownButton />
+            {/* <IconButton>
+              <MenuIcon />
+            </IconButton> */}
           </div>
         </div>
       </header>

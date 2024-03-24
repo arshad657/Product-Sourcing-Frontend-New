@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, Typography } from '@mui/material'
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -6,10 +6,11 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { BiSolidError } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'utils/CustomHooks';
+import { useAuth, useForm } from 'utils/CustomHooks';
 
 function PasswordSettings() {
   const navigate = useNavigate();
+  const { auth } = useAuth()
   const [isPasswordValid, setIsPasswordValid] = useState(true)
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -51,7 +52,14 @@ function PasswordSettings() {
     initialState,
     handleUpload
   );
-
+  
+  useEffect(() => {
+    if(auth?.userRole === 'staff'){
+      navigate('/admin/products')
+      alert("You don't have the permission for this route")
+    }
+  }, [])
+  
   // const isPasswordValid = formData.newPassword.length >= 6;
 
   return (

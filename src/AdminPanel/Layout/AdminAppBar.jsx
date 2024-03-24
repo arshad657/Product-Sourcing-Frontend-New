@@ -16,9 +16,9 @@ export default function AdminAppBar({ drawerWidth}) {
                 <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                     <Typography variant='h6' fontWeight={600}>Admin Panel</Typography>
                 </Box>
-                <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                     <Button variant='h6' fontWeight={600}>Log Out</Button>
-                </Box>
+                </Box> */}
               </Box>
             </Toolbar>
           </AppBar>

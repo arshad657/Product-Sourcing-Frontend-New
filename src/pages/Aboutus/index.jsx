@@ -546,7 +546,7 @@ const AboutusPage = () => {
                   );
                 }}
               />
-              <PagerIndicator
+              {/* <PagerIndicator
                 className="flex gap-2.5 h-[15px] items-center justify-center max-w-[1290px] w-full"
                 count={5}
                 activeCss="inline-block cursor-pointer rounded-[50%] h-[15px] bg-bluegray-900 w-[15px]"
@@ -555,14 +555,10 @@ const AboutusPage = () => {
                 sliderRef={sliderRef1}
                 selectedWrapperCss="inline-block"
                 unselectedWrapperCss="inline-block"
-              />
+              /> */}
             </div>
           </div>
         </div>
-        <div className="flex flex-col font-rubik items-start justify-start md:px-10 sm:px-5 px-[75px] w-full">
-          <CartColumnframe48095972 className="bg-gradient  flex flex-col gap-2 items-start justify-start max-w-[1290px] mx-auto pl-[59px] md:px-5 py-[46px] w-full" />
-        </div>
-        <CartSectionfooter className="bg-black-900 flex font-raleway gap-2 items-center justify-center md:px-5 px-[75px] py-[50px] w-full" />
       </div>
     </>
   );

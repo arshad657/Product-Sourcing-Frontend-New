@@ -49,7 +49,7 @@ const  AdminLayout = () => {
           onClose={handleDrawerToggle}
           variant="permanent"
         >
-          <Box sx={{mx: 'auto', mt: 3}}>
+          <Box sx={{mx: 'auto', my: 3}}>
             <img src={logo} style={{width: 150}}/>
           </Box>
           

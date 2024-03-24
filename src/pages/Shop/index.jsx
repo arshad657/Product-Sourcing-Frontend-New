@@ -57,15 +57,11 @@ const ShopPage = () => {
   useEffect(() => {
     fetchProducts();
     fetchProductCategories();
-  }, [selectedCategory])
+  }, [selectedCategory, search])
 
   const handleSearch = () => {
     fetchProducts();
   }
-  
-
-  console.log(search)
-
   return (
     <>
       <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full">
@@ -108,19 +104,16 @@ const ShopPage = () => {
             <div className="flex flex-1 flex-col font-rubik gap-[50px] items-center justify-start w-full">
               <div className="flex sm:flex-col flex-row sm:gap-10 items-center justify-between w-full">
                 <div className="mx-auto flex sm:flex-1 flex-col font-rubik items-start w-[407px] sm:w-full">
-                  <div className=" flex sm:flex-col flex-row sm:gap-5 items-start justify-start w-full">
-                    <div className="flex sm:flex-1 flex-col items-center justify-start w-[74%] sm:w-full">
+                  <div className="flex sm:flex-col flex-row sm:gap-5 items-start justify-start w-full">
+                    <div className=" flex sm:flex-1 flex-col items-center justify-start w-[90%] sm:w-full">
                       <Input
                         name="frame48095984"
                         onChange={(e) => setSearch(e)}
                         placeholder="Search Product"
-                        className="leading-[normal] p-0 placeholder:text-black-900_3f sm:pr-5 text-black-900_3f text-left text-sm tracking-[-0.50px] w-full"
+                        className=" leading-[normal] p-0 placeholder:text-black-500 sm:pr-5 text-black-900 text-left text-sm tracking-[-0.50px] w-full"
                         wrapClassName="bg-white-A700 pl-4 pr-[35px] py-[15px] w-full"
                       ></Input>
                     </div>
-                    <Button onClick={handleSearch} className="bg-bluegray-900 cursor-pointer font-semibold leading-[normal] min-w-[107px] py-4 text-center text-sm text-yellow-100 tracking-[-0.50px]">
-                      Search
-                    </Button>
                   </div>
                 </div>
                 
@@ -184,7 +177,6 @@ const ShopPage = () => {
             </div>
           </div>
         </div>
-        <CartSectionfooter className="bg-black-900 flex font-raleway gap-2 items-center justify-center md:px-5 px-[75px] py-[50px] w-full" />
       </div>
     </>
   );
