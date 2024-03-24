@@ -23,7 +23,7 @@ export default function HorizontalTableMenuStaff({ params, fetchData, setError }
 
   const handleDelete = async (id) => {
     try {
-        const response = await axios.delete(`http://localhost:4000/api/v1/admins/delete/${id}`);
+        const response = await axios.delete(`https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/admins/delete/${id}`);
         handleClose()
         toast.success("Staff deleted successfully");
         fetchData()

@@ -54,7 +54,7 @@ const HomepagePage = () => {
   ];
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/v1/products');
+      const response = await axios.get('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/products');
       const transformedData = response.data.map(item => {
         const { _id, ...rest } = item; 
         return { id: _id, ...rest }; 
@@ -97,8 +97,7 @@ const HomepagePage = () => {
     },
   ];
   return (
-    <>
-      <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full">
+      <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full pb-10">
         <div className="flex flex-col items-start justify-start w-full">
           <div className="bg-orange-10 flex flex-col items-start justify-start md:px-10 sm:px-5 px-[75px] py-20 w-full">
             <div className="flex md:flex-col flex-row md:gap-10 gap-[60px] items-center justify-start max-w-[1490px] mx-auto w-full">
@@ -597,7 +596,7 @@ const HomepagePage = () => {
             </div>
             <Img
               className="flex-1 md:flex-none md:h-[640px] sm:h-auto h-full max-h-[640px] object-cover sm:w-[] md:w-[]"
-              src="images/img_rectangle16.png"
+              src="https://cdni.iconscout.com/illustration/premium/thumb/man-doing-online-shopping-8368991-6638058.png"
               alt="rectangleSixteen"
             />
           </div>
@@ -619,7 +618,7 @@ const HomepagePage = () => {
                 things I need to pay attention to when choosing furniture
               </Text>
             </div>
-            <List
+            {/* <List
               className="sm:flex-col flex-row gap-5 grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-start w-full"
               orientation="horizontal"
             >
@@ -631,11 +630,10 @@ const HomepagePage = () => {
                   />
                 </React.Fragment>
               ))}
-            </List>
+            </List> */}
           </div>
         </div>
       </div>
-    </>
   );
 };
 

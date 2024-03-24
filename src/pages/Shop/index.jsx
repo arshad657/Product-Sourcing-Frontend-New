@@ -27,7 +27,7 @@ const ShopPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/v1/products',{
+      const response = await axios.get('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/products',{
         params: {
           category: selectedCategory,
           search: search,
@@ -44,7 +44,7 @@ const ShopPage = () => {
   };
   const fetchProductCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/v1/product-categories');
+      const response = await axios.get('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/product-categories');
       const transformedData = response.data.map(item => {
         const { _id, ...rest } = item; 
         return { id: _id, ...rest }; 
@@ -64,7 +64,7 @@ const ShopPage = () => {
   }
   return (
     <>
-      <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full">
+      <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-center justify-start mx-auto w-auto sm:w-full md:w-full pb-10">
         <div className="flex flex-col md:gap-10 gap-[75px] items-start justify-start w-full">
           <p />
         </div>
@@ -121,15 +121,6 @@ const ShopPage = () => {
               <div className="flex flex-col items-center justify-start w-full">
                 {products.length > 0 ?
                 <div className="gap-5 grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
-                  {/* {homepageCardproductPropList.map((props, index) => (
-                    <React.Fragment key={`HomepageCardproduct${index}`}>
-                      <HomepageCardproduct
-                        className="flex flex-1 flex-col gap-4 items-start justify-start w-full"
-                        {...props}
-                      />
-                    </React.Fragment>
-                  ))} */}
-
                   {products.map((props, index) => (
                     <React.Fragment key={`HomepageCardproduct${index}`}>
                       <HomepageCardproduct
@@ -143,7 +134,7 @@ const ShopPage = () => {
                 </div>
                 :
                 <Img
-                  className="inset-[0] justify-center m-auto object-cover max-w-[500px] sm:w-[350px]"
+                  className="inset-[0] justify-center m-auto object-cover max-w-[500px] sm:w-[300px]"
                   alt="image"
                   src={NoData }
                 />

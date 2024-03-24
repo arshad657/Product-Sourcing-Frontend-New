@@ -33,7 +33,7 @@ function PasswordSettings() {
     }
     try {
       setIsPasswordValid(true);
-      const response = await axios.patch('http://localhost:4000/api/v1/change-password', formData, {
+      const response = await axios.patch('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/change-password', formData, {
         headers: {
           'Content-Type': 'application/json',
         },

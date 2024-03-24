@@ -43,7 +43,7 @@ const ShopDetailDescriptionPage = () => {
     
     
     const fetchData = async () => {
-        let url = `http://localhost:4000/api/v1/products/${params.id}`;
+        let url = `https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/products/${params.id}`;
         try {
           const response = await axios.get(url);
           response.data[0]?.prices?.forEach(item => {
@@ -63,7 +63,7 @@ const ShopDetailDescriptionPage = () => {
 
   return (
     <>
-      <div className="bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-start justify-start mx-auto w-auto sm:w-full md:w-full">
+      <div className="pb-16 bg-gray-50 flex flex-col font-rubik sm:gap-10 md:gap-10 gap-[100px] items-start justify-start mx-auto w-auto sm:w-full md:w-full">
         <div className="flex flex-col items-start justify-start w-full">
           <p />
           
@@ -99,7 +99,7 @@ const ShopDetailDescriptionPage = () => {
                         {" "}
                       </span>
                     </Text>
-                    <DrawerAppBar />
+                    {/* <DrawerAppBar /> */}
                     <Text
                       className="text-black-900 text-lg tracking-[-0.50px] w-full"
                       size="txtRubikSemiBold18"

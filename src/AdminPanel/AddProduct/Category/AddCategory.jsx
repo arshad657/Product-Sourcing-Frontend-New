@@ -37,7 +37,7 @@ export default function AddCategory({ setCategory }) {
 
   const handleUpload = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/products/categories/create', {name: name}, {
+      const response = await axios.post('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/products/categories/create', {name: name}, {
         headers: {
           'Content-Type': 'application/json',
         },

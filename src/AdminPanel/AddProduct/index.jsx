@@ -30,7 +30,7 @@ function AddProduct() {
   const handleUpload = async () => {
     try {
       setLoading(true)
-      const response = await axios.post('http://localhost:4000/api/v1/products/upload', data, {
+      const response = await axios.post('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/products/upload', data, {
         headers: {
           'Content-Type': 'application/json',
         },

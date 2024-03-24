@@ -115,36 +115,4 @@ export default function AppContainer(){
   ])
   return <RouterProvider router={router} />;
 }
-// const ProjectRoutes = () => {
-//   return (
-//     <React.Suspense fallback={<>Loading...</>}>
-//         <Router>
-//           <Routes>
-//           <Route path="/" element={<Layout />}>
-//       <Route index element={<Homepage />} />
-//       <Route path="shop" element={<Shop />} />
-//       <Route path="product/:id" element={<ShopDetailDescription />} />
-//       <Route path="detailreview" element={<DetailReview />} />
-//       <Route path="checkout" element={<Checkout />} />
-//       <Route path="wishlist" element={<Wishlist />} />
-//       <Route path="team" element={<Team />} />
-//       <Route path="blog" element={<Blog />} />
-//       <Route path="blogdetail" element={<BlogDetail />} />
-//       <Route path="contactus" element={<Contactus />} />
-//       <Route path="aboutus" element={<Aboutus />} />
-//       <Route path="*" element={<NotFound />} />
-//     </Route>
-//           <Route path="/admin/*" element={<AdminLayout />}>
-//             <Route path="products" element={<ProductList />} />
-//             <Route path="add-product" element={<AddProduct />} />
-//             <Route path="product-categories" element={<ProductCategories />} />
-//             <Route path="staffs" element={<Staffs />} />
-//             <Route path="password-settings" element={<PasswordSettings />} />
-//           </Route>
-//           <Route path="/dhiwise-dashboard" element={<Home />} />
-//         </Routes>
-//       </Router>
-//     </React.Suspense>
-//   );
-// };
-// export default ProjectRoutes;
+

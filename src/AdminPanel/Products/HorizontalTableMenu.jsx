@@ -22,7 +22,7 @@ export default function HorizontalTableMenu({ params, fetchData }) {
   };
 
   const handleDelete = async (id) => {
-    const response = await axios.delete(`http://localhost:4000/api/v1/products/delete/${id}`);
+    const response = await axios.delete(`https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/products/delete/${id}`);
     handleClose()
     toast.success("Product deleted successfully");
     fetchData()

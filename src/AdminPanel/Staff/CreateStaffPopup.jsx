@@ -38,7 +38,7 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
     }
     try {
       setIsPasswordValid(true);
-      const response = await axios.post('http://localhost:4000/api/v1/admins/create', formData, {
+      const response = await axios.post('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/admins/create', formData, {
         headers: {
           'Content-Type': 'application/json',
         },

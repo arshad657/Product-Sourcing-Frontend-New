@@ -6,6 +6,7 @@ body {
   font-family: "Roboto", sans-serif !important;
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 .dhiwise-code,
 .dhiwise-navigation {

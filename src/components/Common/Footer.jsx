@@ -1,34 +1,42 @@
 import React from "react";
 
 import { Button, Img, Text } from "components";
+import { Mail, Phone } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CircleIcon from '@mui/icons-material/Circle';
+import { useNavigate } from "react-router-dom";
 
 const Footer = (props) => {
+  const navigate = useNavigate()
     function handleNavigate3() {
         window.location.href = "https://twitter.com/login/";
       }
       function handleNavigate4() {
         window.location.href = "https://www.facebook.com/login/";
       }
+      const menuItems = [
+        { title: 'Home', path: '/'},
+        { title: 'Shop', path: '/shop'},
+        { title: 'About', path: '/aboutus'},
+        { title: 'Licence', path: '/contact'},
+      ];
   return (
-    <>
       <footer className={props.className}>
-        <div className="flex flex-col md:gap-10 gap-[149px] items-center justify-center w-full">
+        <div className="flex flex-col md:gap-10 gap-[100px] items-center justify-center w-full">
           <div className="flex md:flex-col flex-row md:gap-10 items-start justify-between w-full">
             <div className="flex flex-col gap-4 items-start justify-start w-auto">
               <Text
                 className="md:text-3xl sm:text-[28px] text-[32px] text-gray-53 tracking-[-0.50px] w-auto"
                 size="txtRalewayRomanBold32Gray53"
               >
-                Furnit.
+                Rohman Trading.
               </Text>
               <Text
                 className="leading-[35.00px] max-w-[360px] md:max-w-full text-base text-gray-50_a3 tracking-[-0.50px]"
                 size="txtRubikRegular16Gray50a3"
               >
-                Lorem ipsum dolor sit amet litam consectetur adipiscing elit,
-                facilisi vivamus proin lit laoreet phasel alilus porttitor
-                inter, facilisis condiment tarime egestas rhoncus dapibus
-                iaculis alemir.
+                A Tech-Savvy Digital Marketing IT Group Delivering Strategic Solutions In Online Advertising, SEO, Graphic Design, Social Media, Web Design For Business Growth And Digital Excellence.
               </Text>
             </div>
             <div className="flex flex-col gap-5 items-start justify-start w-[209px]">
@@ -36,39 +44,23 @@ const Footer = (props) => {
                 className="text-gray-53 text-xl tracking-[-0.50px] w-auto"
                 size="txtRalewayRomanSemiBold20Gray53"
               >
-                Customer
+                Company
               </Text>
               <div className="flex flex-col gap-6 items-start justify-start w-auto">
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
-                  size="txtRubikRegular14Gray50a3"
-                >
-                  Order Status
-                </Text>
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
-                  size="txtRubikRegular14Gray50a3"
-                >
-                  Collections
-                </Text>
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
-                  size="txtRubikRegular14Gray50a3"
-                >
-                  Our Story
-                </Text>
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
-                  size="txtRubikRegular14Gray50a3"
-                >
-                  Affiliates
-                </Text>
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
-                  size="txtRubikRegular14Gray50a3"
-                >
-                  Security
-                </Text>
+              {menuItems.map(item => {
+                return <ul onClick={() => navigate(item.path)}>
+                  <li className="flex items-center">
+                    
+                    <CircleIcon className="text-gray-50" sx={{fontSize: '10px'}}/>
+                    <Text
+                      className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto ml-5  hover:text-orange-300"
+                      size="txtRubikRegular14Gray50a3"
+                    >
+                      {item.title}
+                    </Text>
+                  </li>
+                </ul>
+              })}
               </div>
             </div>
             <div className="flex flex-col gap-5 items-start justify-start w-[209px]">
@@ -76,27 +68,42 @@ const Footer = (props) => {
                 className="text-gray-53 text-xl tracking-[-0.50px] w-auto"
                 size="txtRalewayRomanSemiBold20Gray53"
               >
-                Information
+                Contact
               </Text>
               <div className="flex flex-col gap-6 items-start justify-start w-auto">
                 <Text
                   className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
                   size="txtRubikRegular14Gray50a3"
                 >
-                  Customer Service
+                  We're Experts At All Digital Services. We Craft Solutions For Every Type Of Business.
                 </Text>
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
+                <div className="flex items-center">
+                  <Phone className="text-gray-50"/>
+                  <Text
+                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto ml-3"
                   size="txtRubikRegular14Gray50a3"
-                >
-                  Careers
-                </Text>
-                <Text
-                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto"
+                  >
+                    +8801954769755
+                  </Text>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="text-gray-50"/>
+                  <Text
+                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto ml-3"
                   size="txtRubikRegular14Gray50a3"
-                >
-                  FAQ
-                </Text>
+                  >
+                    mail@rohmantrading.com
+                  </Text>
+                </div>
+                <div className="flex items-center">
+                  <LocationOnIcon className="text-gray-50"/>
+                  <Text
+                  className="text-gray-50_a3 text-sm tracking-[-0.50px] w-auto ml-3"
+                  size="txtRubikRegular14Gray50a3"
+                  >
+                    Level 3, Ventura Iconia, Holding 37, Road 11, Block H, Banani 11, Dhaka, Bangladesh
+                  </Text>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-5 items-start justify-start w-[220px]">
@@ -134,31 +141,16 @@ const Footer = (props) => {
               </div>
             </div>
           </div>
-          <div className="flex sm:flex-col flex-row md:gap-10 items-start justify-between w-full">
+          <div className="w-full">
             <Text
-              className="text-base text-gray-50_a3 tracking-[-0.50px] w-auto"
+              className="text-center sm:text-base text-gray-50_a3 tracking-[-0.50px] w-auto"
               size="txtRubikRomanRegular16"
             >
-              © Copyright 2022. All Rights Reserved.
+              © Copyright 2024. All Rights Reserved.
             </Text>
-            <div className="flex flex-row gap-[41px] items-start justify-start w-[272px]">
-              <Text
-                className="flex-1 text-base text-gray-50_a3 tracking-[-0.50px] w-auto"
-                size="txtRubikRomanRegular16"
-              >
-                Terms of condition
-              </Text>
-              <Text
-                className="text-base text-gray-50_a3 tracking-[-0.50px] w-auto"
-                size="txtRubikRomanRegular16"
-              >
-                Privacy Policy
-              </Text>
-            </div>
           </div>
         </div>
       </footer>
-    </>
   );
 };
 

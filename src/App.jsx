@@ -5,13 +5,17 @@ import { AuthProvider } from "AdminPanel/utils/AuthProvider";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 function App() {
-  return <AuthProvider>
-    <AppContainer />
-    {/* <FloatingWhatsApp
-      accountName="Rohman Trading" 
-      phoneNumber='+8801981911829' 
-    /> */}
-  </AuthProvider>
+  return (
+    <div style={{margin: 0}}>
+      <AuthProvider>
+        <AppContainer />
+        {/* <FloatingWhatsApp
+          accountName="Rohman Trading" 
+          phoneNumber='+8801981911829' 
+        /> */}
+      </AuthProvider>
+    </div>
+  )
 }
 
 export default App;

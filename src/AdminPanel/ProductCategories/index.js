@@ -13,7 +13,7 @@ function ProductCategories() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/v1/product-categories');
+      const response = await axios.get('https://product-sourcing-backend-mv2qe9lfn-rubayetseasons-projects.vercel.app/api/v1/product-categories');
       const transformedData = response.data.map(item => {
         const { _id, ...rest } = item; 
         return { id: _id, ...rest }; 
