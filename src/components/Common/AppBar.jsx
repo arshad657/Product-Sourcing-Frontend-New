@@ -56,17 +56,9 @@ const AppBar = (props) => {
               className="text-black-900 text-lg tracking-[-0.50px] w-auto"
               size="txtRubikRomanRegular18"
             >
-              <Link to='/contactus'>
-              Contact
-              </Link>
-            </Text>
-            <Text
-              className="text-black-900 text-lg tracking-[-0.50px] w-auto"
-              size="txtRubikRomanRegular18"
-            >
-              <Link to='/contactus'>
+              {/* <Link to='/contactus'> */}
               Licences
-              </Link>
+              {/* </Link> */}
             </Text>
           </div>
           <div className="hidden sm:block">

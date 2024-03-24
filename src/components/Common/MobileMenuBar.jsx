@@ -100,7 +100,7 @@ export default function DropdownButton() {
         { title: 'Home', path: '/', icon: <HomeIcon /> },
         { title: 'Shop', path: '/shop', icon: <ShoppingCartIcon /> },
         { title: 'About', path: '/aboutus', icon: <Groups2Icon /> },
-        { title: 'Licence', path: '/contact', icon: <VerifiedUserIcon /> },
+        // { title: 'Licence', path: '/contact', icon: <VerifiedUserIcon /> },
       ];
 
   const DrawerList = (
