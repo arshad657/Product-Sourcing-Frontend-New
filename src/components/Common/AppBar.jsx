@@ -19,14 +19,9 @@ const AppBar = (props) => {
               src={logo}
               alt="car"
             />
-            
-            {/* <div className="mobile-menu" onClick={() => setShowMobileDrawer(true)}> */}
-              {/*  */}
-            {/* </div> */}
-
           </div>
           
-          <div className="flex sm:flex-1 flex-row gap-9 sm:hidden items-center justify-evenly w-[498px] sm:w-full">
+          <div className="flex sm:flex-1 flex-row gap-4 sm:hidden items-center justify-evenly w-[300px] sm:w-full">
           <Text
               className="text-black-900 text-lg tracking-[-0.50px] w-auto"
               size="txtRubikRomanRegular18"
@@ -43,29 +38,9 @@ const AppBar = (props) => {
               Shop
               </Link>
             </Text>
-            
-            <Text
-              className="text-black-900 text-lg tracking-[-0.50px] w-auto"
-              size="txtRubikRomanRegular18"
-            >
-              <Link to='/aboutus'>
-              About
-              </Link>
-            </Text>
-            <Text
-              className="text-black-900 text-lg tracking-[-0.50px] w-auto"
-              size="txtRubikRomanRegular18"
-            >
-              {/* <Link to='/contactus'> */}
-              Licences
-              {/* </Link> */}
-            </Text>
           </div>
           <div className="hidden sm:block">
           <DropdownButton />
-            {/* <IconButton>
-              <MenuIcon />
-            </IconButton> */}
           </div>
         </div>
       </header>

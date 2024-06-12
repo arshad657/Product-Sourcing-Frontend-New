@@ -42,7 +42,7 @@ const  AdminLayout = () => {
     };
   
     return (
-        <Box>
+        <Box sx={{backgroundColor: 'white'}}>
         <Drawer
           anchor="left"
           open={open}
@@ -71,11 +71,11 @@ const  AdminLayout = () => {
           <Box p={2} sx={{width: drawerWidth}}>
           </Box>
         </Drawer>
-          <Box sx={{ p: 3, ml: '240px' }}>
+          <Box sx={{ p: 3, ml: '240px',backgroundColor: 'white' }}>
             <AdminAppBar drawerWidth={drawerWidth}/>
             <Box sx={{backgroundColor: 'white'}}>
               <Box sx={{ml: 10, width: '90%', backgroundColor: 'white'}}>
-                <Outlet />
+                <Outlet sx={{backgroundColor: 'white'}}/>
               </Box>
             </Box>
           </Box>

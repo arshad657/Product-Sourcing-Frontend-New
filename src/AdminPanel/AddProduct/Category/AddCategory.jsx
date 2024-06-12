@@ -53,9 +53,8 @@ export default function AddCategory({ setCategory }) {
   };
   return (
     <React.Fragment>
-        <Button variant='contained'  sx={{height: 35,backgroundColor: '#BD792C', '&:hover': {
-            backgroundColor: '#BD792C', }}} onClick={handleClickOpen}>Add Category
-        </Button>
+        
+        <button className='bg-yellow-600 py-3 w-28 text-gray-200 font-semibold rounded-lg shadow-md' onClick={handleClickOpen}>Add Category</button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

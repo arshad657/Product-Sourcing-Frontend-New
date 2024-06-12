@@ -55,8 +55,7 @@ function ProductList() {
     <Box >
         <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: '30px'}}>
           <Typography sx={{fontWeight: 'bold'}} variant="h5" >Product List</Typography>
-          <Button variant='contained' sx={{backgroundColor: '#BD792C', '&:hover': {
-            backgroundColor: '#BD792C'}}} onClick={() => navigate('/admin/add-product')}>Create</Button>
+          <button className='bg-yellow-600 py-3 w-28 text-gray-200 font-semibold rounded-lg shadow-md' onClick={() => navigate('/admin/add-product')}>Create</button>
         </Box>
         <DataGrid 
           rows={products} 

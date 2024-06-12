@@ -1,4 +1,4 @@
-import { Box, Grid, TextField, Typography, Button } from '@mui/material'
+import { Box, Grid, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import ProductForm from './ProductForm'
 import axios from 'axios';
@@ -75,8 +75,7 @@ function AddProduct() {
       <Box sx={{width: '90%', mx: 'auto'}}>
         <Box sx={{mt: 12,mb: 3, display: 'flex', justifyContent: 'space-between'}}>
         <Typography   sx={{textAlign: 'left',  color: '#6b6e73', fontWeight: 600}} variant='h6' >Add Product</Typography>
-        <Button variant='contained'  sx={{mr: 5, backgroundColor: '#BD792C', '&:hover': {
-            backgroundColor: '#BD792C'}}} onClick={handleUpload}>Publish</Button>
+            <button onClick={handleUpload} className='bg-yellow-600 py-3 w-28 text-gray-200 font-semibold rounded-lg shadow-md'>Publish</button>
         </Box>
         {error && 
         <Box sx={{display: 'flex'}}>

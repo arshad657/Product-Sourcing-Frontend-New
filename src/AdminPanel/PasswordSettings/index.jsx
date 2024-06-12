@@ -76,6 +76,7 @@ function PasswordSettings() {
       <FormControl sx={{ }} variant="outlined" error={!isPasswordValid}>
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
+        sx={{height: '50px'}}
         id="outlined-adornment-password"
         type={showPassword ? 'text' : 'password'}
         onChange={(e) => handleChange('newPassword', e.target.value)}
@@ -118,10 +119,10 @@ function PasswordSettings() {
                   </InputAdornment>
                 }
                 label="ConfirmPassword"
+                sx={{height: '50px'}}
             />
           </FormControl>
-          <Button type="submit" sx={{backgroundColor: '#BD792C', '&:hover': {
-            backgroundColor: '#BD792C', color: 'white'}}} variant='contained'>Change Password</Button>
+          <button className='bg-yellow-600 py-3 text-gray-200 font-semibold rounded-lg shadow-md' type='submit' >Create</button>
           </Box>
         </form>
     </Box>

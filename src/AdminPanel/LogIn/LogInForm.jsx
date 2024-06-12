@@ -92,7 +92,7 @@ function LogInForm() {
             )}
           </FormControl>
           </Box>
-          <Button variant='contained' fullWidth sx={{backgroundColor: '#fab800', color: '#1b2e35', fontWeight: 'bold'}} type='submit'>Log In</Button>
+          <button className='bg-amber-500 py-3 w-full font-semibold rounded-lg shadow-md hover:bg-amber-600' type='submit'>Log In</button>
         </form>
         </Box>
     </Box>

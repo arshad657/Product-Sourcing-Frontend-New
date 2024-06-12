@@ -83,6 +83,7 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
                   label="Full Name" 
                   fullWidth
                   required
+                  sx={{height: '50px'}}
                   value={formData.fullName} 
                   onChange={(e) => handleChange('fullName', e.target.value)} 
                 />
@@ -92,7 +93,8 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
                   label="User Name" 
                   fullWidth
                   required
-                  value={formData.userName} 
+                  value={formData.userName}
+                  sx={{height: '50px'}} 
                   onChange={(e) => handleChange('userName', e.target.value)} 
                 />
               </Box>
@@ -105,7 +107,8 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
                       type={showPassword ? 'text' : 'password'}
                       onChange={(e) => handleChange('password', e.target.value)}
                       value={formData?.password}
-                      required 
+                      required
+                      sx={{height: '50px'}} 
                       endAdornment={
                         <InputAdornment position="end">
                           <IconButton
@@ -129,6 +132,7 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
                         id="outlined-adornment-password"
                         type={showConfirmPassword ? 'text' : 'password'}
                         onChange={(e) => handleChange('confirmPassword', e.target.value)}
+                        sx={{height: '50px'}}
                         value={formData?.confirmPassword}
                         required 
                         endAdornment={
@@ -146,8 +150,7 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
                     />
                 </FormControl>
               </Box>
-          <Button type="submit" sx={{backgroundColor: '#BD792C', '&:hover': {
-            backgroundColor: '#BD792C', color: 'white'}}} variant='contained'>Create</Button>
+              <button className='bg-yellow-600 py-3 text-gray-200 font-semibold rounded-lg shadow-md' type='submit' >Create</button>
           </Box>
         </form>
         </DialogContent>

@@ -13,26 +13,14 @@ import {
   Slider,
   Text,
 } from "components";
-import CartColumnframe48095972 from "components/CartColumnframe48095972";
-import CartNavbar from "components/CartNavbar";
-import CartSectionfooter from "components/CartSectionfooter";
-import HomepageCardproduct from "components/HomepageCardproduct";
 import axios from "axios";
 import CSelect from "components/Common/CSelect";
 import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import EnquiryPop from "components/Common/EnquiryPop";
-import DrawerAppBar from "components/Common/MobileMenuBar";
-
-const homeOptionsList = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
 
 const ShopDetailDescriptionPage = () => {
   const [open, setOpen] = React.useState(false);
-  const navigate = useNavigate();
   const params = useParams()
     const [fromOptions, setFromOptions] = useState([])
     const [selectedCountry, setSelectedCountry] = useState({from: ' ', to: ' '})
@@ -67,7 +55,6 @@ const ShopDetailDescriptionPage = () => {
         <div className="flex flex-col items-start justify-start w-full">
           <p />
           
-          {/* <CartNavbar className="bg-white-A700 flex items-center justify-center md:px-5 px-[75px] py-[35px] w-full" /> */}
           <div className="flex flex-col items-start justify-start pt-[75px] md:px-10 sm:px-5 px-[75px] w-full">
             <div className="flex md:flex-col flex-row gap-[47px] items-center justify-start max-w-[1290px] mx-auto w-full">
               <Img
@@ -99,6 +86,7 @@ const ShopDetailDescriptionPage = () => {
                         {" "}
                       </span>
                     </Text>
+
                     {/* <DrawerAppBar /> */}
                     <Text
                       className="text-black-900 text-lg tracking-[-0.50px] w-full"
@@ -138,7 +126,6 @@ const ShopDetailDescriptionPage = () => {
                       </span>
                           
                     </Text> 
-                      {/* <Box sx={{display: {md: 'flex', sm: 'block'}, alignItems: 'center', width: '100%', gap: 2}}> */}
                       <CSelect setFinalItem={setFinalItem} options={fromOptions} prices={product && product?.prices} selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} setInitialState={setInitialState} title='from'/> 
                       <Text
                       className="sm:my-5 text-lg tracking-[-0.50px] w-fit text-gray-500 font-rubik text-left font-normal"
@@ -170,36 +157,9 @@ const ShopDetailDescriptionPage = () => {
                         variant="outlined"
                         value={initialState ? "Please select country" : finalItem && finalItem[0]?.amount ? finalItem[0]?.amount : 'No shipment available'}
                         />
-                      {/* </Box> */}
-                    
                   </Box>
-                  {/* <Text
-                    className="leading-[35.00px] max-w-[621px] md:max-w-full text-gray-500 text-lg tracking-[-0.50px]"
-                    size="txtRubikRegular18Gray500"
-                  >
-                    {product.description}
-                  </Text> */}
                 </div>
                 <div className="flex flex-col items-start justify-start w-full">
-                    {/* <div className="border border-black-900 border-solid flex flex-row gap-[15px] items-center justify-start p-2.5 w-[38%]">
-                      <Img
-                        className="common-pointer h-6 ml-1 w-6"
-                        src="images/img_google.svg"
-                        alt="google"
-                        onClick={handleNavigate2}
-                      />
-                      <Text
-                        className="text-black-900 text-lg tracking-[-0.50px]"
-                        size="txtRubikRegular18"
-                      >
-                        1
-                      </Text>
-                      <Img
-                        className="h-6 w-6"
-                        src="images/img_plus.svg"
-                        alt="plus"
-                      />
-                    </div> */}
                     <Button
                   className="common-pointer bg-bluegray-900 border-2 border-bluegray-900 border-solid cursor-pointer font-medium leading-[normal] min-w-[128px] py-[10px] text-center text-xl text-yellow-100 tracking-[-0.50px]"
                   onClick={() => setOpen(true)}
@@ -232,31 +192,6 @@ const ShopDetailDescriptionPage = () => {
             </div>
           </div>
         </div>
-        {/* <div className="flex flex-col font-poppins items-start justify-start md:px-10 sm:px-5 px-[75px] w-full">
-          <div className="flex md:flex-col flex-row gap-[49px] items-end justify-start max-w-[1290px] mx-auto w-full">
-            <div className="flex flex-1 flex-col gap-[42px] items-start justify-start w-full">
-              <div className="flex flex-row font-josefinsans gap-[50px] items-start justify-start w-full">
-                <div className="flex flex-col gap-2 items-end justify-start w-auto">
-                  <Text
-                    className="text-2xl md:text-[22px] text-bluegray-900 sm:text-xl tracking-[-0.50px] w-auto"
-                    size="txtJosefinSansRomanBold24"
-                  >
-                    Description
-                  </Text>
-                  <Line className="bg-bluegray-900 h-1.5 w-full" />
-                </div>
-              </div>
-              <Text
-                className="leading-[35.00px] text-base text-gray-500 tracking-[-0.50px]"
-                size="txtRubikRegular16"
-              >
-                <>
-                  {product.description}
-                </>
-              </Text>
-            </div>
-          </div>
-        </div> */}
       </div>
       <EnquiryPop open={open} setOpen={setOpen}/>
     </>

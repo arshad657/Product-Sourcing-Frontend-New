@@ -58,7 +58,8 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
                 <span className='text-red-500'>*</span>
               </Typography>
               <TextField
-                id="outlined-basic" 
+                id="outlined-basic"
+                sx={{height: '50px'}} 
                 variant="outlined"
                 value={data?.title} 
                 fullWidth 
@@ -71,6 +72,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <TextField 
               id="outlined-basic" 
               variant="outlined" 
+              sx={{height: '50px'}}
               fullWidth
               value={data?.subTitle} 
               inputProps={{ style: { height: "10px" } }}
@@ -87,15 +89,11 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
                 </IconButton>
               </Box>
               
-              
-
-
-              {/* {renderTextFieldBlocks()} */}
               {Array.from({ length: numberOfPriceObjects }, (_, index) => (
                 <Box key={index} sx={{display: 'flex', justifyContent: 'space-between', mb: 2}}>
-                <TextField id="outlined-basic" label="From" variant="outlined" onChange={(e) => handleChange(e.target.value, 'from', index)} value={data?.prices[index]?.from}/>
-                <TextField id="outlined-basic" label="To" variant="outlined" onChange={(e) => handleChange(e.target.value, 'to', index)}/>
-                <TextField id="outlined-basic" label="Amount" variant="outlined" type='number' onChange={(e) => handleChange(e.target.value, 'amount', index)}/>
+                <TextField sx={{height: '50px'}} id="outlined-basic" label="From" variant="outlined" onChange={(e) => handleChange(e.target.value, 'from', index)} value={data?.prices[index]?.from}/>
+                <TextField sx={{height: '50px'}} id="outlined-basic" label="To" variant="outlined" onChange={(e) => handleChange(e.target.value, 'to', index)}/>
+                <TextField sx={{height: '50px'}} id="outlined-basic" label="Amount" variant="outlined" type='number' onChange={(e) => handleChange(e.target.value, 'amount', index)}/>
                 <IconButton onClick={() => setNumberOfPriceObjects(numberOfPriceObjects - 1)}>
                   <CiCircleMinus />
                 </IconButton>
@@ -109,7 +107,8 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               </Typography>
               <TextField 
               id="outlined-basic" 
-              variant="outlined" 
+              variant="outlined"
+              sx={{height: '80px'}} 
               fullWidth
               value={data?.description} 
               multiline
@@ -120,7 +119,8 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <Typography fontSize='16px' mb={0.5}>Brand</Typography>
               <TextField 
               id="outlined-basic" 
-              variant="outlined" 
+              variant="outlined"
+              sx={{height: '50px'}} 
               fullWidth
               value={data?.brand} 
               inputProps={{ style: { height: "10px" } }}
@@ -131,7 +131,8 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <Typography fontSize='16px' mb={0.5}>Model Name</Typography>
               <TextField 
               id="outlined-basic" 
-              variant="outlined" 
+              variant="outlined"
+              sx={{height: '50px'}} 
               fullWidth
               value={data?.modelName} 
               inputProps={{ style: { height: "10px" } }}
@@ -142,7 +143,8 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <Typography fontSize='16px' mb={0.5}>Color</Typography>
               <TextField 
               id="outlined-basic" 
-              variant="outlined" 
+              variant="outlined"
+              sx={{height: '50px'}} 
               fullWidth
               value={data?.color} 
               inputProps={{ style: { height: "10px" } }}

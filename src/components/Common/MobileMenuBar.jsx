@@ -99,8 +99,6 @@ export default function DropdownButton() {
   const menuItems = [
         { title: 'Home', path: '/', icon: <HomeIcon /> },
         { title: 'Shop', path: '/shop', icon: <ShoppingCartIcon /> },
-        { title: 'About', path: '/aboutus', icon: <Groups2Icon /> },
-        // { title: 'Licence', path: '/contact', icon: <VerifiedUserIcon /> },
       ];
 
   const DrawerList = (
