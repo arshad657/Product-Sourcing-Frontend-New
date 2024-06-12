@@ -7,7 +7,7 @@ import AuthContext from 'AdminPanel/utils/AuthProvider'
 function LogIn() {
   
   return (
-    <Box sx={{height: '100vh',display: 'flex', justifyContent: 'center'}}>
+    <Box sx={{height: '100vh',display: 'flex', justifyContent: 'center', backgroundColor: 'white'}}>
         <Box sx={{width: '75%',display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <LogInForm />
           <img src={loginImg}/>
