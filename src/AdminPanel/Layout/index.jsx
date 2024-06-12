@@ -73,8 +73,8 @@ const  AdminLayout = () => {
         </Drawer>
           <Box sx={{ p: 3, ml: '240px' }}>
             <AdminAppBar drawerWidth={drawerWidth}/>
-            <Box sx={{}}>
-              <Box sx={{ml: 10, width: '90%'}}>
+            <Box sx={{backgroundColor: 'white'}}>
+              <Box sx={{ml: 10, width: '90%', backgroundColor: 'white'}}>
                 <Outlet />
               </Box>
             </Box>
