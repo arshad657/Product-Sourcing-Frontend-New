@@ -49,14 +49,6 @@ export default function HorizontalTableMenu({ params, fetchData }) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        {/* <MenuItem onClick={handleClose}>
-          <RemoveRedEyeIcon style={{ color: 'gray' }}/>
-          <Typography ml={1} fontSize='15px'>View Details</Typography>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <CreateIcon style={{ color: 'gray' }}/>
-          <Typography ml={1} fontSize='15px'>Edit Product</Typography>
-        </MenuItem> */}
         <MenuItem onClick={() => handleDelete(params.row.id)} >
           <DeleteIcon style={{ color: '#CE1515' }} />
           <Typography ml={1} color='#CE1515' fontSize='15px'>Delete Product</Typography>

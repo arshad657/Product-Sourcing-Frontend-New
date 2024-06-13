@@ -59,8 +59,8 @@ function LogInForm() {
                   id="outlined-adornment-password"
                   onChange={(e) => handleChange('username', e.target.value)}
                   value={formData?.username}
-                  required 
-                  label="Password"
+                  required
+                  sx={{height: '50px'}} 
                 />
                 
               </FormControl>
@@ -73,7 +73,8 @@ function LogInForm() {
               type={showPassword ? 'text' : 'password'}
               onChange={(e) => handleChange('password', e.target.value)}
               value={formData?.password}
-              required 
+              required
+              sx={{height: '50px'}} 
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton

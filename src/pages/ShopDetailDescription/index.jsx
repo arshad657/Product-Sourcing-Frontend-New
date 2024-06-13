@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from "react";
-
-import { useNavigate, useParams } from "react-router-dom";
-
+import {useParams } from "react-router-dom";
 import {
   Button,
   Img,
-  Input,
   Line,
-  List,
-  PagerIndicator,
-  SelectBox,
-  Slider,
   Text,
 } from "components";
 import axios from "axios";
@@ -56,12 +49,12 @@ const ShopDetailDescriptionPage = () => {
           <p />
           
           <div className="flex flex-col items-start justify-start pt-[75px] md:px-10 sm:px-5 px-[75px] w-full">
-            <div className="flex md:flex-col flex-row gap-[47px] items-center justify-start max-w-[1290px] mx-auto w-full">
-              <Img
-                className="flex-1 md:flex-none md:h-[595px] sm:h-auto h-full max-h-[595px] object-cover sm:w-[] md:w-[]"
-                src={product.images}
-                alt="rectangle1475"
-              />
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-[47px] items-center justify-start max-w-[1290px] mx-auto w-full">
+            <Img
+              className="flex-1 md:flex-none md:h-[595px] sm:h-auto h-full max-h-[595px] object-cover sm:w-[] md:w-[]"
+              src={product?.images?.[0] ? product.images[0] : null}
+              alt="rectangle1475"
+            />
               <div className="flex flex-1 flex-col gap-[30px] items-start justify-start w-full">
                 <div className="flex flex-col gap-[33px] items-start justify-start w-full">
                   <Text

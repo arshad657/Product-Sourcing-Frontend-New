@@ -57,7 +57,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <Typography fontSize='16px' mb={0.5}>Title
                 <span className='text-red-500'>*</span>
               </Typography>
-              <TextField
+              <OutlinedInput
                 id="outlined-basic"
                 sx={{height: '50px'}} 
                 variant="outlined"
@@ -69,7 +69,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
             </Box>
             <Box sx={{mx: 5,textAlign: 'left', mb: 3}}>
               <Typography fontSize='16px' mb={0.5}>Sub Title</Typography>
-              <TextField 
+              <OutlinedInput 
               id="outlined-basic" 
               variant="outlined" 
               sx={{height: '50px'}}
@@ -91,9 +91,9 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               
               {Array.from({ length: numberOfPriceObjects }, (_, index) => (
                 <Box key={index} sx={{display: 'flex', justifyContent: 'space-between', mb: 2}}>
-                <TextField sx={{height: '50px'}} id="outlined-basic" label="From" variant="outlined" onChange={(e) => handleChange(e.target.value, 'from', index)} value={data?.prices[index]?.from}/>
-                <TextField sx={{height: '50px'}} id="outlined-basic" label="To" variant="outlined" onChange={(e) => handleChange(e.target.value, 'to', index)}/>
-                <TextField sx={{height: '50px'}} id="outlined-basic" label="Amount" variant="outlined" type='number' onChange={(e) => handleChange(e.target.value, 'amount', index)}/>
+                <OutlinedInput sx={{height: '50px'}} placeholder='From' id="outlined-basic"  variant="outlined" onChange={(e) => handleChange(e.target.value, 'from', index)} value={data?.prices[index]?.from}/>
+                <OutlinedInput sx={{height: '50px'}} placeholder='To' id="outlined-basic"  variant="outlined" onChange={(e) => handleChange(e.target.value, 'to', index)}/>
+                <OutlinedInput sx={{height: '50px'}} placeholder='Amount' id="outlined-basic"  variant="outlined" type='number' onChange={(e) => handleChange(e.target.value, 'amount', index)}/>
                 <IconButton onClick={() => setNumberOfPriceObjects(numberOfPriceObjects - 1)}>
                   <CiCircleMinus />
                 </IconButton>
@@ -105,10 +105,10 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
               <Typography fontSize='16px' mb={0.5}>Description
                 <span className='text-red-500'>*</span>
               </Typography>
-              <TextField 
+              <OutlinedInput 
               id="outlined-basic" 
               variant="outlined"
-              sx={{height: '80px'}} 
+              sx={{height: 'auto'}} 
               fullWidth
               value={data?.description} 
               multiline
@@ -117,7 +117,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
             </Box>
             <Box sx={{mx: 5,textAlign: 'left', mb: 3}}>
               <Typography fontSize='16px' mb={0.5}>Brand</Typography>
-              <TextField 
+              <OutlinedInput 
               id="outlined-basic" 
               variant="outlined"
               sx={{height: '50px'}} 
@@ -129,7 +129,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
             </Box>
             <Box sx={{mx: 5,textAlign: 'left', mb: 3}}>
               <Typography fontSize='16px' mb={0.5}>Model Name</Typography>
-              <TextField 
+              <OutlinedInput 
               id="outlined-basic" 
               variant="outlined"
               sx={{height: '50px'}} 
@@ -141,7 +141,7 @@ function ProductForm({uploadedFiles, setUploadedFiles, data, setData}) {
             </Box>
             <Box sx={{mx: 5,textAlign: 'left', mb: 3}}>
               <Typography fontSize='16px' mb={0.5}>Color</Typography>
-              <TextField 
+              <OutlinedInput 
               id="outlined-basic" 
               variant="outlined"
               sx={{height: '50px'}} 

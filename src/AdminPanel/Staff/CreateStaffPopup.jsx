@@ -77,7 +77,7 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
           }
           <Box sx={{textAlign: 'left',  display: 'grid', rowGap: 4, mt: 5}}>
               <Box sx={{display: 'flex', columnGap: 4}}>
-                <TextField 
+                <OutlinedInput 
                   id="outlined-basic" 
                   variant="outlined"
                   label="Full Name" 
@@ -87,7 +87,7 @@ export default function CreateStaffPopup({ fetchData, handleClose, open}) {
                   value={formData.fullName} 
                   onChange={(e) => handleChange('fullName', e.target.value)} 
                 />
-                <TextField 
+                <OutlinedInput 
                   id="outlined-basic" 
                   variant="outlined"
                   label="User Name" 

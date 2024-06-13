@@ -8,7 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
-import { Box, Input, TextField } from '@mui/material';
+import { Box, Input, OutlinedInput, TextField } from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -80,20 +80,20 @@ export default function AddCategory({ setCategory }) {
               <Typography fontSize='16px' mb={0.5}>Category Name
                 <span className='text-red-500'>*</span>
               </Typography>
-              <TextField 
+              <OutlinedInput
+                sx={{height: '50px'}} 
                 id="outlined-basic" 
                 variant="outlined" 
                 fullWidth 
                 inputProps={{ style: { height: "10px" } }}
                 value={name}
+                required
                 onChange={(e) => setName(e.target.value)}
                 />
         </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleUpload}>
-            Save
-          </Button>
+          <button onClick={handleUpload} className='bg-yellow-600 p-3 text-gray-200 font-semibold rounded-lg shadow-md'>Save</button>
         </DialogActions>
       </BootstrapDialog>
     </React.Fragment>

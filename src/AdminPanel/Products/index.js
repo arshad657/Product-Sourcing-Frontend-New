@@ -23,7 +23,6 @@ function ProductList() {
     }
   };
   const columns = [
-    // { field: '_id', headerName: '_id', width: 70,headerAlign: 'center', align: 'center', flex: 1},
     { field: 'photo', headerName: 'Photo', width: 200, headerAlign: 'center', align: 'center', flex: 1, renderCell: (params) => (
       <Box sx={{width: '30%',}}>
         <img src={params.row.images[0]} alt={params.row.name} />
