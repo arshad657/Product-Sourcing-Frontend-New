@@ -1,14 +1,12 @@
-## arshad_almas_s_application10
+## Product-Sourcing-Frontend
 
-Generated with ❤️ from [DhiWise](https://www.dhiwise.com)
-
-## Description
+##  Live site [Link](https://rohman-trading.netlify.app/)
 
 - This React application is built using [create-react-app](https://create-react-app.dev/).
 - It uses [Tailwind CSS](https://tailwindcss.com/)
 - The application is generated in JavaScript.
 
-## Pre-requisites
+## 🚀 Key Features
 
 - [git](https://git-scm.com/) - v2.13 or greater
 - [NodeJS](https://nodejs.org/en/) - v16 or greater
