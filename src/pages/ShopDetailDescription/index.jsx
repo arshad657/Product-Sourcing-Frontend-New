@@ -139,6 +139,7 @@ const ShopDetailDescriptionPage = () => {
                     </Text>
                       <TextField
                         id="input-with-icon-textfield"
+                        className="bg-transparent"
                         InputProps={{
                             readOnly: true,
                         startAdornment: (

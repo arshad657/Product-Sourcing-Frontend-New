@@ -1,23 +1,8 @@
-import React, { useEffect, useState } from "react";
-
-import { Button, Img, Input, SelectBox, Text } from "components";
-import CartColumnframe48095972 from "components/CartColumnframe48095972";
-import CartNavbar from "components/CartNavbar";
-import CartSectionfooter from "components/CartSectionfooter";
-import HomepageCardproduct from "components/HomepageCardproduct";
 import axios from "axios";
+import { Img, Input, Text } from "components";
+import React, { useEffect, useState } from "react";
 import NoData from '../../assets/images/no-data.png'
-
-const homeOptionsList = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
-const sortOptionsList = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
+import HomepageCardproduct from "components/HomepageCardproduct";
 
 const ShopPage = () => {
   const [products, setProducts] = useState([])

@@ -25,7 +25,7 @@ function ProductList() {
   const columns = [
     { field: 'photo', headerName: 'Photo', width: 200, headerAlign: 'center', align: 'center', flex: 1, renderCell: (params) => (
       <Box sx={{width: '30%',}}>
-        <img src={params.row.images[0]} alt={params.row.name} />
+        <img src={params.row.images[1] ? params.row.images[1]: params.row.images[0] ? params.row.images[0] : null} alt={params.row.name} />
       </Box>
     ),
   },

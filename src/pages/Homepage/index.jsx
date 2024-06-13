@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import logo  from '../../assets/images/homeImage.png'
-import { useNavigate } from "react-router-dom";
 import {
   Button,
   Img,
   PagerIndicator,
   Slider,
   Text,
-} from "components";
+  } from "components";
+  import axios from "axios";
+  import { useNavigate } from "react-router-dom";
+  import ServicesCard from "components/ServicesCard";
+  import React, { useEffect, useState } from "react";
+  import logo  from '../../assets/images/homeImage.png'
 import HomepageCardproduct from "components/HomepageCardproduct";
-import axios from "axios";
-import ServicesCard from "components/ServicesCard";
 
 const HomepagePage = () => {
   const navigate = useNavigate()

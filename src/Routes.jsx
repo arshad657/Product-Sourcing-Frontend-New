@@ -1,26 +1,25 @@
-import React, { Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route, createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import NotFound from "pages/NotFound";
-import AddProduct from "AdminPanel/AddProduct";
-import ProductList from "AdminPanel/Products";
-import AdminLayout from "AdminPanel/Layout";
-import Layout from "components/Layout";
-import PasswordSettings from "AdminPanel/PasswordSettings";
-import ProductCategories from "AdminPanel/ProductCategories";
-import Staffs from "AdminPanel/Staff";
-// import ProtectedRoute from "AdminPanel/utils/ProtectedRoute";
+import { 
+  RouterProvider, 
+  createBrowserRouter, 
+  BrowserRouter as Router, 
+  } from "react-router-dom";
 import LogIn from "AdminPanel/LogIn";
-import RequireAuth from "AdminPanel/utils/RequireAuth";
+import Staffs from "AdminPanel/Staff";
+import Layout from "components/Layout";
+import React, { Suspense } from "react";
+import AdminLayout from "AdminPanel/Layout";
+import ProductList from "AdminPanel/Products";
+import AddProduct from "AdminPanel/AddProduct";
 import Animations from "components/Layout/Loader";
+import RequireAuth from "AdminPanel/utils/RequireAuth";
+import ProductCategories from "AdminPanel/ProductCategories";
+import PasswordSettings from "AdminPanel/PasswordSettings";
 const Aboutus = React.lazy(() => import("pages/Aboutus"));
-const Contactus = React.lazy(() => import("pages/Contactus"));
 const ShopDetailDescription = React.lazy(
   () => import("pages/ShopDetailDescription"),
 );
 const Shop = React.lazy(() => import("pages/Shop"));
 const Homepage = React.lazy(() => import("pages/Homepage"));
-
-
 
 export default function AppContainer(){
   const router = createBrowserRouter([
@@ -58,7 +57,6 @@ export default function AppContainer(){
         },
         
       ],
-      
     },
     {
       path: 'admin/signin',
